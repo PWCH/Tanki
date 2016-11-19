@@ -3,7 +3,7 @@
 
 using namespace sf;
 
-class Player
+class Player : public Transformable 
 {
 public:
 	Player();

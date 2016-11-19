@@ -12,11 +12,14 @@ Player::Player()
 	pSpeed = 400;
 
 	//Za³adowanie tekstury gracza
-	if (!(pTexture.loadFromFile("data/gracz.png")))
+	if (!(pTexture.loadFromFile("data/player.png")))
 	{
 		cout << "nie zaladowano tekstury gracza";
 	}
 	pSprite.setTexture(pTexture);
+
+	//Przestawienie punktu zaczepienia
+	pSprite.setOrigin(20, 20);
 
 	//Ustawienie pozycji gracza
 	pPosition.x = 100;
@@ -32,18 +35,22 @@ Sprite Player::getSprite()
 void Player::moveLeft()
 {
 	pLeftPressed = true;
+	pSprite.setRotation(-90);
 }
 void Player::moveRight()
 {
 	pRightPressed = true;
+	pSprite.setRotation(90);
 }
 void Player::moveUp() 
 {
 	pUpPressed = true;
+	pSprite.setRotation(0);
 }
 void Player::moveDown()
 {
 	pDownPressed = true;
+	pSprite.setRotation(180);
 }
 
 void Player::stopLeft()
