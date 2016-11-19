@@ -39,4 +39,6 @@ void Engine::input()
 	{
 		pPlayer.stopRight();
 	}
+	/*if (Keyboard::isKeyPressed(Keyboard::Left) && Keyboard::isKeyPressed(Keyboard::Down))
+		pPlayer.moveDownLeft();*/
 }

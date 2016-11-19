@@ -31,25 +31,33 @@ Sprite Player::getSprite()
 {
 	return pSprite;
 }
-
+//Ruch i obrót gracza
 void Player::moveLeft()
 {
 	pLeftPressed = true;
+	pUpPressed = false;
+	pDownPressed = false;
 	pSprite.setRotation(-90);
 }
 void Player::moveRight()
 {
 	pRightPressed = true;
+	pUpPressed = false;
+	pDownPressed = false;
 	pSprite.setRotation(90);
 }
 void Player::moveUp() 
 {
 	pUpPressed = true;
+	pRightPressed = false;
+	pLeftPressed = false;
 	pSprite.setRotation(0);
 }
 void Player::moveDown()
 {
 	pDownPressed = true;
+	pRightPressed = false;
+	pLeftPressed = false;
 	pSprite.setRotation(180);
 }
 
@@ -69,6 +77,7 @@ void Player::stopDown()
 {
 	pDownPressed = false;
 }
+
 
 //Ruch gracza na wejsciu klatki
 void Player::update(float elapsedTime)

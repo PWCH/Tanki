@@ -17,7 +17,9 @@ public:
 	void moveRight();
 	void moveUp();
 	void moveDown();
-
+	//Kombinacyjne poruszanie gracza
+	/*void moveDownLeft();
+	void moveDownRight();*/
 	//Zatrzymuje gracza w okreœlonym kierunku
 	void stopLeft();
 	void stopRight();
