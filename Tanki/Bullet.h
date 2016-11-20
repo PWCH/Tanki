@@ -1,11 +1,13 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "Enemy.h"
+#include "Entity.h"
 #include <vector>
+#include <iostream>
 
 using namespace sf;
+using namespace std;
 
-class Bullet : Enemy
+class Bullet : Entity
 
 {
 public:
@@ -13,15 +15,16 @@ public:
 	~Bullet();
 
 	//Dodawanie pocisków
-	void addBullet(Vector2f, Vector2f);
+	void addBullet();
 
 	//Usuwanie pocisków
 	void removeBullet(int it);
 
 	//Aktualizacja pocisków
 	void update();
+
 private:
-	//Pozycja gracza
+	//Pozycja pocisku
 	Vector2f bulletPosition;
 
 	//Sprite pocisku
@@ -29,5 +32,11 @@ private:
 
 	//Tekstura pocisku
 	Texture bulletTexture;
+
+	//Vector przechowuj¹cy wszyskie pociski
+	vector <Bullet> allBullets;
+
+	//Prêdkoœæ pocisku
+	float bulletSpeed;
 };
 

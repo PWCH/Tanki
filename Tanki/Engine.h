@@ -1,6 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "Player.h"
+#include "Enemy.h"
+#include "Bullet.h"
 
 using namespace sf;
 
@@ -20,6 +22,11 @@ private:
 	//Inicjacja gracza
 	Player pPlayer;
 
+	//Inicjacja przeciwnika
+	//Enemy enemy;
+
+	//Inicjacja pocisków gracza
+	Bullet playerBullets;
 	//Prywatne funckje tylko do u¿ytku wewnêtrznego
 	void input();
 	void update(float dtAsSeconds);

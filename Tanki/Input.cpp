@@ -45,6 +45,7 @@ void Engine::input()
 	}
 	if (Keyboard::isKeyPressed(Keyboard::Space))
 	{
-		//Dodanie posisku do Wektora
+		cout << "Dodano pocisk";
+		playerBullets.addBullet();
 	}
 }

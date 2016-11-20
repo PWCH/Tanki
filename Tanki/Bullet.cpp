@@ -1,7 +1,4 @@
 #include "Bullet.h"
-#include <iostream>
-
-using namespace std;
 
 
 Bullet::Bullet(bool can)
@@ -16,7 +13,13 @@ Bullet::Bullet(bool can)
 	bulletSprite.setTexture(bulletTexture);
 
 	//Ustawienie punktu zaczepienia pocisku
-	bulletSprite.setOrigin(10, 10);
+	Vector2u bulletSize = bulletTexture.getSize();
+	bulletSprite.setOrigin(bulletSize.x / 2, bulletSize.y / 2);
+}
+
+void Bullet::addBullet()
+{
+	allBullets.push_back(new Bullet());
 }
 
 

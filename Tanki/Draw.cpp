@@ -9,7 +9,12 @@ void Engine::draw()
 	
 	//Rysuje t³o
 	gameWindow.draw(gameBackgroudSprite);
+
+	//Rysuje gracza
 	gameWindow.draw(pPlayer.getSprite());
+
+	//Rysuje przeciwników
+	//gameWindow.draw(enemy[5].generateEnemy());
 	gameWindow.display();
 
 }

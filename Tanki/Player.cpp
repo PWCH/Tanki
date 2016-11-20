@@ -19,7 +19,8 @@ Player::Player()
 	pSprite.setTexture(pTexture);
 
 	//Przestawienie punktu zaczepienia
-	pSprite.setOrigin(20, 20);
+	Vector2u pSize = pTexture.getSize();
+	pSprite.setOrigin(pSize.x / 2, pSize.y / 2);
 
 	//Ustawienie pozycji gracza
 	pPosition.x = 100;
