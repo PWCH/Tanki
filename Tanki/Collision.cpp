@@ -26,7 +26,7 @@ bool Player::pColission()
 	rightCollision.setPosition(Vector2f(righttopcorner));
 	FloatRect positionPCollision = rightCollision.getGlobalBounds();
 	
-	//Górn krawêdŸ
+	//Górna krawêdŸ
 	RectangleShape topCollision(Vector2f(lineSize, 1));
 	topCollision.setPosition(Vector2f(lefttopcorner));
 	FloatRect positionTCollision = topCollision.getGlobalBounds();
@@ -37,6 +37,8 @@ bool Player::pColission()
 	FloatRect positionDCollision = downCollision.getGlobalBounds();
 
 	FloatRect playerPosition = pSprite.getGlobalBounds();
+
+	//Warunki kolizji ze brzegami sceny
 	if (positionPCollision.intersects(playerPosition))
 	{
 		//cout << "Prawa kolizja";

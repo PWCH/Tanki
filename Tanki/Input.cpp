@@ -43,4 +43,8 @@ void Engine::input()
 	{
 		pPlayer.stopRight();
 	}
+	if (Keyboard::isKeyPressed(Keyboard::Space))
+	{
+		//Dodanie posisku do Wektora
+	}
 }

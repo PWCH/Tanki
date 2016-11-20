@@ -51,8 +51,6 @@ void Player::moveUp()
 	pUpPressed = true;
 	pRightPressed = false;
 	pLeftPressed = false;
-	pLeftCollision = false;
-	pRightCollision = false;
 	pSprite.setRotation(0);
 }
 void Player::moveDown()
@@ -60,8 +58,6 @@ void Player::moveDown()
 	pDownPressed = true;
 	pRightPressed = false;
 	pLeftPressed = false;
-	pLeftCollision = false;
-	pRightCollision = false;
 	pSprite.setRotation(180);
 }
 
