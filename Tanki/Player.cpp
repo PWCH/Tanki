@@ -37,7 +37,6 @@ void Player::moveLeft()
 	pLeftPressed = true;
 	pUpPressed = false;
 	pDownPressed = false;
-	collision = pColission();
 	pSprite.setRotation(-90);
 }
 void Player::moveRight()
@@ -45,7 +44,6 @@ void Player::moveRight()
 	pRightPressed = true;
 	pUpPressed = false;
 	pDownPressed = false;
-	collision = pColission();
 	pSprite.setRotation(90);
 }
 void Player::moveUp() 
@@ -53,7 +51,8 @@ void Player::moveUp()
 	pUpPressed = true;
 	pRightPressed = false;
 	pLeftPressed = false;
-	collision = pColission();
+	pLeftCollision = false;
+	pRightCollision = false;
 	pSprite.setRotation(0);
 }
 void Player::moveDown()
@@ -61,44 +60,49 @@ void Player::moveDown()
 	pDownPressed = true;
 	pRightPressed = false;
 	pLeftPressed = false;
-	collision = pColission();
+	pLeftCollision = false;
+	pRightCollision = false;
 	pSprite.setRotation(180);
 }
 
 void Player::stopLeft()
 {
 	pLeftPressed = false;
+	pLeftCollision = false;
 }
 void Player::stopRight()
 {
 	pRightPressed = false;
+	pRightCollision = false;
 }
 void Player::stopUp()
 {
 	pUpPressed = false;
+	pTopCollision = false;
 }
 void Player::stopDown()
 {
 	pDownPressed = false;
+	pDownCollision = false;
 }
 
 //Ruch gracza na wejsciu klatki
 void Player::update(float elapsedTime)
 {
-	if (pRightPressed && collision)
-	{
+	pColission();
+	if (pRightPressed && !(pRightCollision))
+	{	
 		pPosition.x += pSpeed * elapsedTime;
-
 	}
-	if (pLeftPressed && collision)
-	{
-		pPosition.x -= pSpeed * elapsedTime;
-	}
-	if (pUpPressed && collision)
+	if (pUpPressed && !(pTopCollision))
 	{
 		pPosition.y -= pSpeed * elapsedTime;
 	}
-	if (pDownPressed && collision)
+	if (pLeftPressed && !(pLeftCollision))
+	{
+		pPosition.x -= pSpeed * elapsedTime;
+	}
+	else if (pDownPressed && !(pDownCollision))
 	{
 		pPosition.y += pSpeed * elapsedTime;
 	}

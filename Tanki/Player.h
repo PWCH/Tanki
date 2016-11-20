@@ -45,7 +45,11 @@ private:
 	bool pDownPressed;
 	
 	//Kolizja do warunków
-	bool collision;
+	bool pLeftCollision;
+	bool pRightCollision;
+	bool pTopCollision;
+	bool pDownCollision;
+
 	//Prêdkoœæ gracza w px na sekundê
 	float pSpeed;
 };
