@@ -17,9 +17,7 @@ public:
 	void moveRight();
 	void moveUp();
 	void moveDown();
-	//Kombinacyjne poruszanie gracza
-	/*void moveDownLeft();
-	void moveDownRight();*/
+
 	//Zatrzymuje gracza w okreœlonym kierunku
 	void stopLeft();
 	void stopRight();
@@ -28,6 +26,9 @@ public:
 
 	//Funkcja wywo³ywana co klatkê
 	void update(float elapsedTime);
+
+	//Sprawdzenie kolizji 
+	bool pColission();
 private:
 	//Pozycja gracza
 	Vector2f pPosition;
@@ -42,7 +43,9 @@ private:
 	bool pRightPressed;
 	bool pUpPressed;
 	bool pDownPressed;
-
+	
+	//Kolizja do warunków
+	bool collision;
 	//Prêdkoœæ gracza w px na sekundê
 	float pSpeed;
 };

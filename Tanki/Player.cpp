@@ -9,7 +9,7 @@ using namespace sf;
 Player::Player()
 {
 	//Prêdkoœæ gracza
-	pSpeed = 400;
+	pSpeed = 150;
 
 	//Za³adowanie tekstury gracza
 	if (!(pTexture.loadFromFile("data/player.png")))
@@ -37,6 +37,7 @@ void Player::moveLeft()
 	pLeftPressed = true;
 	pUpPressed = false;
 	pDownPressed = false;
+	collision = pColission();
 	pSprite.setRotation(-90);
 }
 void Player::moveRight()
@@ -44,6 +45,7 @@ void Player::moveRight()
 	pRightPressed = true;
 	pUpPressed = false;
 	pDownPressed = false;
+	collision = pColission();
 	pSprite.setRotation(90);
 }
 void Player::moveUp() 
@@ -51,6 +53,7 @@ void Player::moveUp()
 	pUpPressed = true;
 	pRightPressed = false;
 	pLeftPressed = false;
+	collision = pColission();
 	pSprite.setRotation(0);
 }
 void Player::moveDown()
@@ -58,6 +61,7 @@ void Player::moveDown()
 	pDownPressed = true;
 	pRightPressed = false;
 	pLeftPressed = false;
+	collision = pColission();
 	pSprite.setRotation(180);
 }
 
@@ -78,23 +82,23 @@ void Player::stopDown()
 	pDownPressed = false;
 }
 
-
 //Ruch gracza na wejsciu klatki
 void Player::update(float elapsedTime)
 {
-	if (pRightPressed)
+	if (pRightPressed && collision)
 	{
 		pPosition.x += pSpeed * elapsedTime;
+
 	}
-	if (pLeftPressed)
+	if (pLeftPressed && collision)
 	{
 		pPosition.x -= pSpeed * elapsedTime;
 	}
-	if (pUpPressed)
+	if (pUpPressed && collision)
 	{
 		pPosition.y -= pSpeed * elapsedTime;
 	}
-	if (pDownPressed)
+	if (pDownPressed && collision)
 	{
 		pPosition.y += pSpeed * elapsedTime;
 	}

@@ -10,7 +10,6 @@ void Engine::draw()
 	//Rysuje t³o
 	gameWindow.draw(gameBackgroudSprite);
 	gameWindow.draw(pPlayer.getSprite());
-
 	gameWindow.display();
 
 }
