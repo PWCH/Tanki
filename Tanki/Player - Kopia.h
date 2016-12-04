@@ -3,7 +3,7 @@
 
 using namespace sf;
 
-class Player : public Transformable
+class Player : public Transformable 
 {
 public:
 	Player();
@@ -11,9 +11,6 @@ public:
 
 	//Wysy³a kopiê sprite do main
 	Sprite getSprite();
-
-    //okreslenie kierunku
-    //int kierunek;
 
 	//Porusza gracza w okreœlonym kierunku
 	void moveLeft();
@@ -30,25 +27,23 @@ public:
 	//Funkcja wywo³ywana co klatkê
 	void update(float elapsedTime);
 
-	//Sprawdzenie kolizji
+	//Sprawdzenie kolizji 
 	bool pColission();
-
+private:
 	//Pozycja gracza
 	Vector2f pPosition;
-
-private:
 
 	Sprite pSprite;
 
 	//Tekstura gracza
 	Texture pTexture;
 
-	//Kierunek poruszania gracza
+	//Kierunek poruszania gracza 
 	bool pLeftPressed;
 	bool pRightPressed;
 	bool pUpPressed;
 	bool pDownPressed;
-
+	
 	//Kolizja do warunków
 	bool pLeftCollision;
 	bool pRightCollision;

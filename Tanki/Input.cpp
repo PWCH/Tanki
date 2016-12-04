@@ -14,6 +14,7 @@ void Engine::input()
 	if (Keyboard::isKeyPressed(Keyboard::Up))
 	{
 		pPlayer.moveUp();
+		kierunek = 1;
 	}
 	else
 	{
@@ -22,6 +23,7 @@ void Engine::input()
 	if (Keyboard::isKeyPressed(Keyboard::Down))
 	{
 		pPlayer.moveDown();
+		kierunek = 2;
 	}
 	else
 	{
@@ -30,6 +32,7 @@ void Engine::input()
 	if (Keyboard::isKeyPressed(Keyboard::Left))
 	{
 		pPlayer.moveLeft();
+		kierunek = 3;
 	}
 	else
 	{
@@ -38,14 +41,23 @@ void Engine::input()
 	if (Keyboard::isKeyPressed(Keyboard::Right))
 	{
 		pPlayer.moveRight();
+		kierunek = 4;
 	}
 	else
 	{
 		pPlayer.stopRight();
 	}
-	if (Keyboard::isKeyPressed(Keyboard::Space))
+	if (Keyboard::isKeyPressed(Keyboard::Space) && tylkoRaz>=150)
 	{
 		cout << "Dodano pocisk";
-		playerBullets.addBullet();
+
+		Bullet bullet(kierunek, pPlayer.pPosition);/*bullet.kierunek = Bullet::UP/*true/*, &bulletTexture*/
+		playerBullets.push_back(bullet);
+
+		tylkoRaz = 0;
+
+
+		//okreslanie kierunku pocisku
+//		if(pPlaye.pLeftPressed == true) playerBullets::kierunek = Kierunek = UP;
 	}
 }

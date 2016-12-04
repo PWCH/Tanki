@@ -11,7 +11,11 @@ class Bullet : Entity
 
 {
 public:
-	Bullet(bool = true);
+
+    //okreslenie kierunku wystrzalu
+	enum Kierunek {UP, DOWN, LEFT, RIGHT} kierunk;
+
+	Bullet(int kierunek, Vector2f pozycjaGracza/*Kierunek kierunek/*, Texture *bulletTexture*/);
 	~Bullet();
 
 	//Dodawanie pocisków
@@ -23,6 +27,23 @@ public:
 	//Aktualizacja pocisków
 	void update();
 
+	//Wysyla kopie sprite do main
+	Sprite getSprite();
+
+	//Funkcja wywo³ywana co klatkê
+	void update(float elapsedTime);
+
+	//sprawdzanie kolizji
+	bool bulletColission();
+
+	void moveBullets();
+
+	//przelacznik strzelania
+//	bool switchBullet;
+
+    //Sprawdzenie kolizji
+	bool pColission();
+
 private:
 	//Pozycja pocisku
 	Vector2f bulletPosition;
@@ -33,10 +54,22 @@ private:
 	//Tekstura pocisku
 	Texture bulletTexture;
 
-	//Vector przechowuj¹cy wszyskie pociski
+	//Vector przechowujacy wszyskie pociski
 	vector <Bullet> allBullets;
 
 	//Prêdkoœæ pocisku
 	float bulletSpeed;
+
+	//Kierunek poruszania gracza
+	bool pLeftPressed = false;
+	bool pRightPressed = false;
+	bool pUpPressed = false;
+	bool pDownPressed = false;
+
+	//Kolizja do warunków
+	bool pLeftCollision;
+	bool pRightCollision;
+	bool pTopCollision;
+	bool pDownCollision;
 };
 

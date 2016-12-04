@@ -47,7 +47,7 @@ void Player::moveRight()
 	pDownPressed = false;
 	pSprite.setRotation(90);
 }
-void Player::moveUp()
+void Player::moveUp() 
 {
 	pUpPressed = true;
 	pRightPressed = false;
@@ -88,7 +88,7 @@ void Player::update(float elapsedTime)
 {
 	pColission();
 	if (pRightPressed && !(pRightCollision))
-	{
+	{	
 		pPosition.x += pSpeed * elapsedTime;
 	}
 	if (pUpPressed && !(pTopCollision))
