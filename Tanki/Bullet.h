@@ -18,19 +18,19 @@ public:
 	Bullet(int kierunek, Vector2f pozycjaGracza/*Kierunek kierunek, Texture *bulletTexture*/);
 	~Bullet();
 
-	//Dodawanie pocisków
+	//Dodawanie pociskÃ³w
 	void addBullet();
 
-	//Usuwanie pocisków
+	//Usuwanie pociskÃ³w
 	bool removeBullet();
 
-	//Aktualizacja pocisków
+	//Aktualizacja pociskÃ³w
 	void update();
 
 	//Wysyla kopie sprite do main
 	Sprite getSprite();
 
-	//Funkcja wywo³ywana co klatkê
+	//Funkcja wywoÂ³ywana co klatkÃª
 	void update(float elapsedTime);
 
 	//sprawdzanie kolizji
@@ -40,6 +40,7 @@ public:
 
 	//przelacznik strzelania
 	//bool switchBullet;
+	int test=0;
 
 private:
 	//Pozycja pocisku
@@ -54,7 +55,7 @@ private:
 	//Vector przechowujacy wszyskie pociski
 	vector <Bullet> allBullets;
 
-	//Prêdkoœæ pocisku
+	//PrÃªdkoÅ“Ã¦ pocisku
 	float bulletSpeed;
 
 	//Kierunek poruszania gracza
@@ -63,10 +64,10 @@ private:
 	bool pUpPressed = false;
 	bool pDownPressed = false;
 
-	//Kolizja do warunków
-	bool pLeftCollision;
-	bool pRightCollision;
-	bool pTopCollision;
-	bool pDownCollision;
+	//Kolizja do warunkÃ³w
+	bool pLeftCollision= false;
+	bool pRightCollision= false;
+	bool pTopCollision= false;
+	bool pDownCollision= false;
 };
 

@@ -51,12 +51,10 @@ void Engine::input()
 	{
 		cout << "Dodano pocisk";
 
-		Bullet bullet(kierunek, pPlayer.pPosition);/*bullet.kierunek = Bullet::UP/*true/*, &bulletTexture*/
+		Bullet bullet(kierunek, pPlayer.pPosition);
 		playerBullets.push_back(bullet);
+		cout << "\n\nIle pociskow: " << playerBullets.size();
 		tylkoRaz = 0;
 
-
-		//okreslanie kierunku pocisku
-//		if(pPlaye.pLeftPressed == true) playerBullets::kierunek = Kierunek = UP;
 	}
 }
