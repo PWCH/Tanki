@@ -85,7 +85,7 @@ bool Player::pColission()
 		return pDownCollision;
 	}
 }
-/*
+
 bool Bullet::bulletColission()
 {
 	//Ograniczenie obszaru sceny poprzez utworzenie linii
@@ -164,4 +164,4 @@ bool Bullet::bulletColission()
 		return pDownCollision;
 	}
 }
-*/
+

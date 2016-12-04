@@ -53,7 +53,6 @@ void Engine::input()
 
 		Bullet bullet(kierunek, pPlayer.pPosition);/*bullet.kierunek = Bullet::UP/*true/*, &bulletTexture*/
 		playerBullets.push_back(bullet);
-
 		tylkoRaz = 0;
 
 

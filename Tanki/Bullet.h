@@ -15,14 +15,14 @@ public:
     //okreslenie kierunku wystrzalu
 	enum Kierunek {UP, DOWN, LEFT, RIGHT} kierunk;
 
-	Bullet(int kierunek, Vector2f pozycjaGracza/*Kierunek kierunek/*, Texture *bulletTexture*/);
+	Bullet(int kierunek, Vector2f pozycjaGracza/*Kierunek kierunek, Texture *bulletTexture*/);
 	~Bullet();
 
 	//Dodawanie pocisków
 	void addBullet();
 
 	//Usuwanie pocisków
-	void removeBullet(int it);
+	bool removeBullet();
 
 	//Aktualizacja pocisków
 	void update();
@@ -39,10 +39,7 @@ public:
 	void moveBullets();
 
 	//przelacznik strzelania
-//	bool switchBullet;
-
-    //Sprawdzenie kolizji
-	bool pColission();
+	//bool switchBullet;
 
 private:
 	//Pozycja pocisku
