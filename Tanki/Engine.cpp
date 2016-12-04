@@ -10,7 +10,7 @@ Engine::Engine()
 	gameWindow.create(VideoMode(resolution.x, resolution.y), "Tank Game");
 	//sf::RenderWindow gameWindow(sf::VideoMode(resolution.x, resolution.y), "SFML works!");
 
-	//£aduje teksturê t³a
+	//Â£aduje teksturÃª tÂ³a
 	gameBackgroudTexture.loadFromFile("data/background.png");
 	//Wczytanie tekstury pocisku
 	if (!(bulletTexture.loadFromFile("data/bullet.png")))
@@ -26,6 +26,8 @@ Engine::Engine()
 void Engine::start()
 {
 	Clock clock;
+
+
 
 	while (gameWindow.isOpen())
 	{

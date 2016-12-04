@@ -11,7 +11,7 @@ class Engine
 public:
 	Engine();
 	~Engine();
-	//start wywo³a wszystkie prywatne funkcje
+	//start wywoÂ³a wszystkie prywatne funkcje
 	void start();
 
 	int kierunek;
@@ -20,7 +20,7 @@ public:
 
 private:
 	RenderWindow gameWindow;
-	//Deklaracja sprite i tekstury t³a
+	//Deklaracja sprite i tekstury tÂ³a
 	Sprite gameBackgroudSprite;
 	Texture gameBackgroudTexture;
 	Texture bulletTexture;
@@ -29,13 +29,17 @@ private:
 	Player pPlayer;
 
 	//Inicjacja przeciwnika
-	//Enemy enemy;
+	Enemy enemy;
 
-	//Inicjacja pocisków gracza
+	//Inicjacja pociskÃ³w gracza
 	vector <Bullet> playerBullets;
+
+	//przeciwnicy
+//	Enemy enemy;
+
 	//Bullet playerBullets;
 
-	//Prywatne funckje tylko do u¿ytku wewnêtrznego
+	//Prywatne funckje tylko do uÂ¿ytku wewnÃªtrznego
 	void input();
 	void update(float dtAsSeconds);
 	void draw();

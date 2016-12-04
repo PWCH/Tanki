@@ -4,7 +4,7 @@ using namespace sf;
 
 void Engine::draw()
 {
-	//Czyœci ostatni¹ klatkê
+	//CzyÅ“ci ostatniÂ¹ klatkÃª
 	gameWindow.clear(Color::White);
 
 	//Rysuje tlo
@@ -13,15 +13,18 @@ void Engine::draw()
 	//Rysuje gracza
 	gameWindow.draw(pPlayer.getSprite());
 
+	//Rysuje przeciwnika
+	gameWindow.draw(enemy.generateEnemy());
+
 	//Rysuje pociski tylko problem z kasowaniem :(
 	for (int i = playerBullets.size() - 1; i > 0; --i)
 	{
 		gameWindow.draw(playerBullets[i].getSprite());
-		/*Sprawdzenie czy ma kasowaæ i usuwanie, ale nie dzia³a. Kolizja jest wykrywania ale lepiej to by wygl¹da³o gdy
-		1) Dodawanie pocisków powinno byæ przez funkcjê bullet.addBullet()
-		2) Usuwanie pocisków powinno byæ po sprawdzeniu bullet.removeBullet() i po³¹czone z bullet.Update()
-		Proponowane rozwi¹zanie:
-		Stworzyæ globalny vector <Bullet> i na nim dzia³aæ w klasie Bullet
+		/*Sprawdzenie czy ma kasowaÃ¦ i usuwanie, ale nie dziaÂ³a. Kolizja jest wykrywania ale lepiej to by wyglÂ¹daÂ³o gdy
+		1) Dodawanie pociskÃ³w powinno byÃ¦ przez funkcjÃª bullet.addBullet()
+		2) Usuwanie pociskÃ³w powinno byÃ¦ po sprawdzeniu bullet.removeBullet() i poÂ³Â¹czone z bullet.Update()
+		Proponowane rozwiÂ¹zanie:
+		StworzyÃ¦ globalny vector <Bullet> i na nim dziaÂ³aÃ¦ w klasie Bullet
 		*/
 		//if (playerBullets[i].removeBullet())
 		//{
@@ -31,9 +34,9 @@ void Engine::draw()
 		//	playerBullets.pop_back();
 		//}
 		//else {}
-			
+
 	}
-	//Rysuje przeciwników
+	//Rysuje przeciwnikÃ³w
 	//gameWindow.draw(enemy[5].generateEnemy());
 	gameWindow.display();
 

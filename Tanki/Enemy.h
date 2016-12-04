@@ -1,4 +1,4 @@
-#pragma 
+#pragma
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
@@ -15,12 +15,15 @@ public:
 
 	//Zabicie przeciwnika
 	void killEnemy();
-	
-	void update(float elapsedTime);
+
+	void update(float elapsedTime, Vector2f pozycjaGracz);
 
 	~Enemy();
+
+	bool pColission();
+
 private:
-	
+
 	//Liczba przeciwników
 	int noEnemies;
 
@@ -35,9 +38,20 @@ private:
 
 	//Prêdkoœæ przeciwnika
 	float enemySpeed;
-	
-	//????Tablica przeciwników
-	Sprite arrEnemy[];
 
+	//????Tablica przeciwników
+	Sprite arrEnemy[3];
+
+	//Kierunek poruszania gracza
+	bool pLeftPressed;
+	bool pRightPressed;
+	bool pUpPressed;
+	bool pDownPressed;
+
+	//Kolizja do warunków
+	bool pLeftCollision;
+	bool pRightCollision;
+	bool pTopCollision;
+	bool pDownCollision;
 };
 

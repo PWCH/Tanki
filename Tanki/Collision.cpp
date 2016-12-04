@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Player.h"
 #include "Bullet.h"
+#include "Enemy.h"
 
 
 using namespace std;
@@ -12,27 +13,27 @@ bool Player::pColission()
 	//Ograniczenie obszaru sceny poprzez utworzenie linii
 	int lineSize = 650;
 
-	//Ustawienie rogów obszaru sceny
+	//Ustawienie rogÃ³w obszaru sceny
 	Vector2f lefttopcorner(40, 80);
 	Vector2f leftdowncorner(40, 580);
 	Vector2f righttopcorner(700, 40);
 
-	//Lewa krawêdŸ
+	//Lewa krawÃªdÅ¸
 	RectangleShape leftCollision(Vector2f(1, lineSize));
 	leftCollision.setPosition(Vector2f(lefttopcorner));
 	FloatRect positionLCollision = leftCollision.getGlobalBounds();
 
-	//Prawa krawêdŸ
+	//Prawa krawÃªdÅ¸
 	RectangleShape rightCollision(Vector2f(1, lineSize));
 	rightCollision.setPosition(Vector2f(righttopcorner));
 	FloatRect positionPCollision = rightCollision.getGlobalBounds();
 
-	//Górna krawêdŸ
+	//GÃ³rna krawÃªdÅ¸
 	RectangleShape topCollision(Vector2f(lineSize, 1));
 	topCollision.setPosition(Vector2f(lefttopcorner));
 	FloatRect positionTCollision = topCollision.getGlobalBounds();
 
-	//Dolna krawêdŸ
+	//Dolna krawÃªdÅ¸
 	RectangleShape downCollision(Vector2f(lineSize, 1));
 	downCollision.setPosition(Vector2f(leftdowncorner));
 	FloatRect positionDCollision = downCollision.getGlobalBounds();
@@ -91,27 +92,27 @@ bool Bullet::bulletColission()
 	//Ograniczenie obszaru sceny poprzez utworzenie linii
 	int lineSize = 650;
 
-	//Ustawienie rogów obszaru sceny
+	//Ustawienie rogÃ³w obszaru sceny
 	Vector2f lefttopcorner(40, 80);
 	Vector2f leftdowncorner(40, 580);
 	Vector2f righttopcorner(700, 40);
 
-	//Lewa krawêdŸ
+	//Lewa krawÃªdÅ¸
 	RectangleShape leftCollision(Vector2f(1, lineSize));
 	leftCollision.setPosition(Vector2f(lefttopcorner));
 	FloatRect positionLCollision = leftCollision.getGlobalBounds();
 
-	//Prawa krawêdŸ
+	//Prawa krawÃªdÅ¸
 	RectangleShape rightCollision(Vector2f(1, lineSize));
 	rightCollision.setPosition(Vector2f(righttopcorner));
 	FloatRect positionPCollision = rightCollision.getGlobalBounds();
 
-	//Górna krawêdŸ
+	//GÃ³rna krawÃªdÅ¸
 	RectangleShape topCollision(Vector2f(lineSize, 1));
 	topCollision.setPosition(Vector2f(lefttopcorner));
 	FloatRect positionTCollision = topCollision.getGlobalBounds();
 
-	//Dolna krawêdŸ
+	//Dolna krawÃªdÅ¸
 	RectangleShape downCollision(Vector2f(lineSize, 1));
 	downCollision.setPosition(Vector2f(leftdowncorner));
 	FloatRect positionDCollision = downCollision.getGlobalBounds();

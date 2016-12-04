@@ -67,7 +67,7 @@ bool Bullet::removeBullet()
 	if (pTopCollision == 1 || pDownCollision == 1 || pLeftCollision == 1 || pRightCollision == 1)
 		return false;
 
-	else return true;
+		else return true;
 }
 
 void Bullet::update(float elapsedTime)
